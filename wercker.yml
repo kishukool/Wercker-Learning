@@ -19,7 +19,7 @@
    after-steps:                    
     
  push-2-docker:
-   box: nginx:latest
+   box: nginx:lates
    
    steps:
      - script:
