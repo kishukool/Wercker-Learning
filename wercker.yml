@@ -37,7 +37,7 @@
          password: $DOCKER_PASSWORD
          # we want to push both the release image and as the latest
          tag: dev-$WERCKER_GIT_COMMIT latest
-         repository: devopscafe/amusement-park
+         repository: kishukool/kishukool
          registry: https://hub.docker.com
          ports: 80 
          cmd: nginx -g 'daemon off';
