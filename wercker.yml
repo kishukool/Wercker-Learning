@@ -51,7 +51,7 @@
      - script:
          name: Pull newest docker images
          code: |
-           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker pull devopscafe/amusement-park
+           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker pull kishukool/kishukool
      - script:
          name: Stop all running containers
          code: |
@@ -63,13 +63,13 @@
      - script:
          name: Remove Image behind all service/containers.
          code: |
-           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker rmi devopscafe/amusement-park:current || echo ‘failed to remove image behind stopped container’
+           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker rmi kishukool/kishukool:current || echo ‘failed to remove image behind stopped container’
      - script:
          name: Tag the pulled image
          code: |
-           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker tag devopscafe/amusement-park:latest devopscafe/amusement-park:current
+           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker tag kishukool/kishukool:latest kishukool/kishukool
      - script:
          name: Start all services/containers
          code: |
-           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker container run --detach -p 80:80 --name ravi-linux devopscafe/amusement-park:current
+           ssh $DEV_REMOTE_USER@$DEV_REMOTE_HOST sudo docker container run --detach -p 80:80 --name ravi-linux kishukool/kishukool
  
